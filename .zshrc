@@ -142,3 +142,6 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 ### For That Wonderful Syntax Highlighting ###
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+bindkey -s '^f' 'fzf\n'
+bindkey -s '^d' 'cd $(find * -type d | fzf)\n'
