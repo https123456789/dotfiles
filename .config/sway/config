@@ -286,3 +286,5 @@ exec_always {
     # gsettings set $gnome-schema font-name 'Your font name'
 }
 
+# Start a polkit agent
+exec /usr/bin/lxsession
