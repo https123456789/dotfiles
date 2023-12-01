@@ -145,4 +145,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey -s '^f' 'nvim $(fzf)\n'
-bindkey -s '^d' 'cd $(find * -type d | fzf)\n'
+bindkey -s '^d' 'cd $({find * -type d | fzf} || pwd)\n'
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
