@@ -1,6 +1,4 @@
-SPACESHIP_TIME_SHOW=true
 SPACESHIP_USER_SHOW=true
-SPACESHIP_BATTER_SHOW=true
 SPACESHIP_GIT_BRANCH_ASYNC=true
 
 # **Show the full compiler version**

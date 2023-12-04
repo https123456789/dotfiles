@@ -1,0 +1,13 @@
+shell = "zsh"
+
+[plugins]
+
+[plugins.commacd]
+github = "shyiko/commacd"
+use = ["commacd.sh"]
+
+[plugins.spaceship]
+github = "spaceship-prompt/spaceship-prompt"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
