@@ -55,8 +55,12 @@ alias l="ls -la"
 # Bare git repo for dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-bindkey -s '^f' 'nvim $(fzf)\n'
-bindkey -s '^d' 'cd $({find * -type d | fzf} || pwd)\n'
+# Ctrl+arrow
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+bindkey -s '^e' 'nvim $(fzf)\n'
+bindkey -s '^f' 'cd $({find * -type d | fzf} || pwd)\n'
 
 # Lazily load NVM
 if [ -z "$NVM_DIR" ]; then
