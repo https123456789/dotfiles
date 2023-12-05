@@ -1,24 +1,8 @@
-# On slow systems, checking the cached .zcompdump file to see if it must be 
-# regenerated adds a noticable delay to zsh startup.  This little hack restricts 
-# it to once a day.  It should be pasted into your own completion file.
-#
-# The globbing is a little complicated here:
-# - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
-# - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
-# - '.' matches "regular files"
-# - 'mh+24' matches files (or directories or whatever) that are older than 24 hours.
-autoload -Uz compinit 
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-    compinit;
-else
-    compinit -C;
-fi;
-
-#### PACKAGE MANAGER ####
-
+# Package manager
 eval "$(sheldon source)"
 
-######## ME #########
+# Enable arrow keys for selecting a tab completion
+zstyle ':completion:*' menu select
 
 export SCCACHE_DIR="$HOME/.cache/sccache"
 
@@ -50,7 +34,7 @@ export SYSTEMD_EDITOR="$EDITOR"
 export BROWSER="google-chrome-beta"
 
 alias cat="bat"
-alias l="ls -la"
+alias l="ls -la --color=auto"
 
 # Bare git repo for dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -59,10 +43,26 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-bindkey -s '^e' 'nvim $(fzf)\n'
+bindkey -s '^o' 'nvim $(fzf)\n'
 bindkey -s '^f' 'cd $({find * -type d | fzf} || pwd)\n'
 
 # Lazily load NVM
 if [ -z "$NVM_DIR" ]; then
     autoload /usr/share/nvm/init-nvm.sh
 fi
+
+# On slow systems, checking the cached .zcompdump file to see if it must be 
+# regenerated adds a noticable delay to zsh startup.  This little hack restricts 
+# it to once a day. 
+#
+# The globbing is a little complicated here:
+# - '#q' is an explicit glob qualifier that makes globbing work within zsh's [[ ]] construct.
+# - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
+# - '.' matches "regular files"
+# - 'mh+24' matches files (or directories or whatever) that are older than 24 hours.
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+    compinit;
+else
+    compinit -C;
+fi;
