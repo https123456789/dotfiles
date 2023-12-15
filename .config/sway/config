@@ -21,9 +21,10 @@ set $term kitty
 set $menu tofi-drun --drun-launch=true
 set $run dmenu_path | tofi | xargs swaymsg exec --
 
-set $browser google-chrome-beta
-set $browser-profile-normal Default
-set $browser-profile-school "Profile 1"
+set $browser firefox-developer-edition
+set $secondary-browser google-chrome-beta
+set $secondary-browser-profile-normal Default
+set $secondary-browser-profile-school "Profile 1"
 
 include /etc/sway/config-vars.d/*
 
@@ -31,7 +32,8 @@ include /etc/sway/config-vars.d/*
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg #1e1e2e solid_color
-output * bg /usr/share/endeavouros/backgrounds/eos_wallpapers_community/LAUNCH-SUNRISE.png fit
+#output * bg /usr/share/endeavouros/backgrounds/eos_wallpapers_community/LAUNCH-SUNRISE.png fit
+
 #
 # Example configuration:
 #
@@ -78,8 +80,9 @@ input "type:touchpad" {
 
     # Start a browser
     bindsym $mod+p exec $browser
-    bindsym $mod+Shift+p exec $browser --profile-directory=$browser-profile-normal
-    bindsym $mod+Alt+p exec $browser --profile-directory=$browser-profile-school
+    bindsym $mod+Shift+p exec $secondary-browser
+    #bindsym $mod+Shift+p exec $browser --profile-directory=$browser-profile-normal
+    #bindsym $mod+Alt+p exec $browser --profile-directory=$browser-profile-school
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -88,7 +91,7 @@ input "type:touchpad" {
     bindsym $mod+d exec $menu
     bindsym $mod+Shift+d exec $run
 
-    bindsym $mod+Shift+Print exec sway-screenshot -m region
+    bindsym $mod+Shift+Print exec sway-screenshot -m region -o Screenshots
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -285,7 +288,7 @@ exec_always {
     gsettings set $gnome-schema color-scheme prefer-dark
     # gsettings set $gnome-schema icon-theme 'Your icon theme'
     gsettings set $gnome-schema cursor-theme 'Catppuccin-Mocha-Dark-Cursors'
-    # gsettings set $gnome-schema font-name 'Your font name'
+    gsettings set $gnome-schema font-name 'Fira Code Nerd Font'
 }
 
 # Start a polkit agent
