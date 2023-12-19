@@ -31,7 +31,7 @@ export PATH="$PATH:$HOME/.local/bin"
 # Make compliant applications use neovim
 export EDITOR="nvim"
 export SYSTEMD_EDITOR="$EDITOR"
-export BROWSER="google-chrome-beta"
+export BROWSER="firefox-developer-edition"
 
 alias cat="bat"
 alias l="ls -la --color=auto"
@@ -44,12 +44,10 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 bindkey -s '^o' 'nvim $(fzf)\n'
-bindkey -s '^f' 'cd $({find * -type d | fzf} || pwd)\n'
+bindkey -s '^f' 'cd $({fd --type d | fzf} || pwd)\n'
 
-# Lazily load NVM
-if [ -z "$NVM_DIR" ]; then
-    autoload /usr/share/nvm/init-nvm.sh
-fi
+# Node version management
+eval "$(fnm env --use-on-cd --corepack-enabled)"
 
 # On slow systems, checking the cached .zcompdump file to see if it must be 
 # regenerated adds a noticable delay to zsh startup.  This little hack restricts 
