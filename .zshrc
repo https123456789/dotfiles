@@ -44,7 +44,7 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 bindkey -s '^o' 'nvim $(fzf)\n'
-bindkey -s '^f' 'cd $({fd --type d | fzf} || pwd)\n'
+bindkey -s '^f' 'cd "$({fd --type d | fzf} || pwd)"\n'
 
 # Node version management
 eval "$(fnm env --use-on-cd --corepack-enabled)"
