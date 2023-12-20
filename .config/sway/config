@@ -1,9 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -267,7 +261,6 @@ bindsym $mod+Escape exec swaylock \
 
 # Notifications
 exec_always killall dunst;dunst
-exec_always omz reload
 #bindsym $mod+Shift+n exec swaync-client -t -sw
 bindsym $mod+Alt+n exec notify-send test
 bindsym $mod+Alt+x exec dunstctl close
