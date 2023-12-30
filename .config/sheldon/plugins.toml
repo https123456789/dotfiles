@@ -22,5 +22,12 @@ apply = ["defer"]
 github = "zsh-users/zsh-completions"
 apply = ["defer"]
 
+[plugins.zsh-autoenv]
+github = "Tarrasch/zsh-autoenv"
+
+[plugins.abbr]
+github = "olets/zsh-abbr"
+use = ["zsh-abbr.zsh"]
+
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"

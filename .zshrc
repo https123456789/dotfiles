@@ -34,7 +34,7 @@ export SYSTEMD_EDITOR="$EDITOR"
 export BROWSER="firefox-developer-edition"
 
 alias cat="bat"
-alias l="ls -la --color=auto"
+#alias l="ls -la --color=auto"
 
 # Bare git repo for dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
