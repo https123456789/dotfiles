@@ -6,6 +6,9 @@ shell = "zsh"
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
 
+[plugins.evalcache]
+github = "mroth/evalcache"
+
 [plugins.spaceship]
 github = "spaceship-prompt/spaceship-prompt"
 
