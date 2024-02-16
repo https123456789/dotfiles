@@ -12,6 +12,9 @@ handle() {
         hyprctl dispatch moveworkspacetomonitor "7 1"
         hyprctl dispatch moveworkspacetomonitor "8 1"
         hyprctl dispatch moveworkspacetomonitor "9 1"
+
+        # Waybar will get a bit messed up so we can reload it
+        kill -SIGUSR2 $(pidof waybar)
     fi
 }
 
