@@ -2,10 +2,9 @@
     "layer": "top",
     "gap": 2,
     "height": 27,
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
-    //"modules-center": ["sway/window"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "temperature", "battery", "clock"],
-    "sway/window": {
+    "hyprland/window": {
         "max-length": 150
     },
     "battery": {
@@ -41,8 +40,7 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
+    }, "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",

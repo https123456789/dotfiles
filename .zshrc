@@ -6,6 +6,9 @@ zstyle ':completion:*' menu select
 
 export SCCACHE_DIR="$HOME/.cache/sccache"
 
+# Cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # Add sbin to path
 export PATH="$PATH:/usr/sbin"
 
@@ -31,13 +34,9 @@ export PATH="$PATH:$HOME/.local/bin"
 # Make compliant applications use neovim
 export EDITOR="nvim"
 export SYSTEMD_EDITOR="$EDITOR"
-export BROWSER="firefox-developer-edition"
+export BROWSER="firefox"
 
 alias cat="bat"
-#alias l="ls -la --color=auto"
-
-# Bare git repo for dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Ctrl+arrow
 bindkey "^[[1;5C" forward-word
@@ -48,6 +47,12 @@ bindkey -s '^f' 'cd "$({fd --type d | fzf} || pwd)"\n'
 
 # Node version management
 eval "$(fnm env --use-on-cd --corepack-enabled)"
+
+# Atuin
+eval "$(atuin init zsh)"
+
+# Zoxide
+eval "$(zoxide init zsh)"
 
 # On slow systems, checking the cached .zcompdump file to see if it must be 
 # regenerated adds a noticable delay to zsh startup.  This little hack restricts 
