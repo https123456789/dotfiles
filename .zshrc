@@ -9,6 +9,9 @@ export SCCACHE_DIR="$HOME/.cache/sccache"
 # Cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Nimble (mainly for nitch)
+export PATH="$PATH:$HOME/.nimble/bin"
+
 # Add sbin to path
 export PATH="$PATH:/usr/sbin"
 
@@ -36,6 +39,9 @@ export EDITOR="nvim"
 export SYSTEMD_EDITOR="$EDITOR"
 export BROWSER="firefox"
 
+# GPG Agent
+export GPG_TTY=$(tty)
+
 alias cat="bat"
 
 # Ctrl+arrow
@@ -49,7 +55,7 @@ bindkey -s '^f' 'cd "$({fd --type d | fzf} || pwd)"\n'
 eval "$(fnm env --use-on-cd --corepack-enabled)"
 
 # Atuin
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # Zoxide
 eval "$(zoxide init zsh)"
@@ -69,3 +75,5 @@ if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
 else
     compinit -C;
 fi;
+
+nitch
