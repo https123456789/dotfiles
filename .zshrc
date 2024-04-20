@@ -62,6 +62,9 @@ eval "$(zoxide init zsh)"
 
 fpath+="$HOME/.zfunc"
 
+# grc support
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+
 # On slow systems, checking the cached .zcompdump file to see if it must be 
 # regenerated adds a noticable delay to zsh startup.  This little hack restricts 
 # it to once a day. 
