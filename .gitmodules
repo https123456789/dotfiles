@@ -1,6 +1,6 @@
 [submodule ".config/hypr/catppuccin-theme"]
 	path = .config/hypr/catppuccin-theme
 	url = https://github.com/catppuccin/hyprland
-[submodule "/home/ben/.config/kitty/vim-kitty-navigator"]
-	path = /home/ben/.config/kitty/vim-kitty-navigator
+[submodule ".config/kitty/vim-kitty-navigator"]
+	path = .config/kitty/vim-kitty-navigator
 	url = https://github.com/knubie/vim-kitty-navigator
