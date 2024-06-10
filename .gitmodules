@@ -4,3 +4,6 @@
 [submodule ".config/kitty/vim-kitty-navigator"]
 	path = .config/kitty/vim-kitty-navigator
 	url = https://github.com/knubie/vim-kitty-navigator
+[submodule ".config/hypr/catppuccin-hyprlock"]
+	path = .config/hypr/catppuccin-hyprlock
+	url = https://github.com/catppuccin/hyprlock
