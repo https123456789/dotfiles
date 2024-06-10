@@ -9,6 +9,9 @@ export SCCACHE_DIR="$HOME/.cache/sccache"
 # Cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 
+# Deno
+export PATH="$PATH:$HOME/.deno/bin:$PATH"
+
 # Nimble (mainly for nitch)
 export PATH="$PATH:$HOME/.nimble/bin"
 
