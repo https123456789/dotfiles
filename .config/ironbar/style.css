@@ -51,7 +51,7 @@
 
 .tray {
     all: unset;
-    background-color: transparent;
+    background-color: @ctp-base;
     border: 2px solid @ctp-surface0;
     border-radius: 25px;
     padding: 0px 10px;
