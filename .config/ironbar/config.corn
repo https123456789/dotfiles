@@ -50,6 +50,8 @@ let {
             max_length = 80
         }
         icon_size = 16
+        show_if = "~/.config/ironbar/has_any_active_window.sh"
+        show_icon = false
     }
 
     $workspaces = {
