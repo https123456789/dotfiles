@@ -1,0 +1,6 @@
+default: catppuccin-base
+    cp swaync-catppuccin/dist/mocha.css style.css
+    sed -i -e 's/font-family: "Ubuntu Nerd Font";/font-family: "Fira Code Nerd Font";/g' style.css
+
+catppuccin-base:
+    cd swaync-catppuccin && npm i --no-dev && npm run build

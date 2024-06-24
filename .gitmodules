@@ -7,3 +7,6 @@
 [submodule ".config/hypr/catppuccin-hyprlock"]
 	path = .config/hypr/catppuccin-hyprlock
 	url = https://github.com/catppuccin/hyprlock
+[submodule ".config/swaync/swaync-catppuccin"]
+	path = .config/swaync/swaync-catppuccin
+	url = https://github.com/catppuccin/swaync.git
