@@ -11,7 +11,7 @@ let {
 
     $tray = {
         type = "tray"
-        icon_size = 32
+        icon_size = 16
     }
 
     $sysinfo = {
@@ -70,7 +70,11 @@ let {
         // $mpris
         $focused
     ]
-    $end = [ $volume $battery $clock ]
+    $end = [
+        $volume
+        // $battery
+        $clock
+    ]
 } in {
     position = "top"
     height = 32
